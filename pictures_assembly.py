@@ -17,8 +17,8 @@ def assemble_pictures(max_x, max_y, results_to_print, path_to_pictures_folder=No
     images_to_put = prepare_images_list(results_to_print, path_to_pictures_folder)
     for data in images_to_put:
         picture, image_x_size, image_y_size, left_up_corner_x, left_up_corner_y = data
-        put_picture( board,  picture, image_x_size, image_y_size, left_up_corner_x, left_up_corner_y)
-    return board
+        put_picture(board,  picture, image_x_size, image_y_size, left_up_corner_x, left_up_corner_y)
+    return im
 
 
 def put_picture(board, image, image_x_size, image_y_size, left_up_corner_x, left_up_corner_y):
@@ -68,3 +68,7 @@ def print_board(pixel, max_x, max_y):
         for j in range(max_y):
             print(pixel[i, j], end=" ")
         print("")
+
+
+def write_board_to_file(image, file_path):
+    image.save(file_path, "PNG")
