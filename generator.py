@@ -8,3 +8,4 @@ def generate(dir_name, width, height):
     distributed = distribute_pictures(width, height, pictures)
     result = assembly.assemble_pictures(width, height, distributed, dir_name)
     assembly.write_board_to_file(result, "out" + os.path.sep + "output.png")
+    return result
