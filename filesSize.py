@@ -12,9 +12,9 @@ def get_image_size(dir):
     for root, dirs, files in os.walk(dir):
         for name in files:
             print name
-            im = Image.open(dir+"\\"+name)
+            im = Image.open(dir + os.path.sep + name)
             print im.size
             x.append(im.size[0])
             y.append(im.size[1])
-        list = zip(x,y)
+        list = zip(x,y, files)
         return list

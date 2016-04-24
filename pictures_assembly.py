@@ -1,6 +1,6 @@
 from PIL import Image
 
-# Wyświetlenie użytkownikowi otrzymanego wyniku
+# Wyswietlenie uzytkownikowi otrzymanego wyniku
 # (np. Jako kwadrat o rozmiarze tablicy a w nim mniejsze kwadraty na wyliczonych pozycjach
 
 # results_to_print=[
@@ -63,11 +63,11 @@ def prepare_images_list(results_to_print, path_to_pictures_folder):
     return images_to_put
 
 
-def print_board(pixel, max_x, max_y):
-    for i in range(max_x):
-        for j in range(max_y):
-            print(pixel[i, j], end=" ")
-        print("")
+# def print_board(pixel, max_x, max_y):
+#     for i in range(max_x):
+#         for j in range(max_y):
+# #              print(pixel[i, j], end=" ")
+#         print("")
 
 
 def write_board_to_file(image, file_path):
