@@ -34,13 +34,17 @@ class StartGUI(QtGui.QMainWindow):
 
     def start(self):
         print "starting with arguments: \ndir={} \nwidth={} \nheight={}\n".format(self.dir_name, self.ui.widthSpinBox.value(), self.ui.heightSpinBox.value())
-        image = generate(self.dir_name, self.ui.widthSpinBox.value(), self.ui.heightSpinBox.value())
-        self.show_result(image)
+        width = self.ui.widthSpinBox.value()
+        height = self.ui.heightSpinBox.value()
+        image = generate(self.dir_name, width, height)
+        self.show_result(image, width, height)
 
-    def show_result(self, image):
+    def show_result(self, image, width, height):
         self.qimage = ImageQt.ImageQt(image)
         self.pixmap = QPixmap.fromImage(self.qimage)
         self.result_label.setPixmap(self.pixmap)
+        self.result_label.setFixedHeight(height)
+        self.result_label.setFixedWidth(width)
         self.result_label.show()
 
 if __name__ == "__main__":
