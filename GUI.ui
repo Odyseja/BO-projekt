@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>393</width>
-    <height>178</height>
+    <width>596</width>
+    <height>626</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QPushButton" name="startButton">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>130</y>
+     <x>480</x>
+     <y>580</y>
      <width>98</width>
      <height>27</height>
     </rect>
@@ -34,7 +34,7 @@
     <rect>
      <x>30</x>
      <y>60</y>
-     <width>221</width>
+     <width>421</width>
      <height>31</height>
     </rect>
    </property>
@@ -58,7 +58,7 @@
   <widget class="QPushButton" name="openButton">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>470</x>
      <y>60</y>
      <width>98</width>
      <height>27</height>
@@ -71,28 +71,34 @@
   <widget class="QSpinBox" name="widthSpinBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>120</y>
+     <x>20</x>
+     <y>180</y>
      <width>60</width>
      <height>27</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="heightSpinBox">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>120</y>
+     <x>120</x>
+     <y>180</y>
      <width>60</width>
      <height>27</height>
     </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
    </property>
   </widget>
   <widget class="QLabel" name="widthLabel">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>100</y>
+     <x>20</x>
+     <y>160</y>
      <width>66</width>
      <height>17</height>
     </rect>
@@ -104,14 +110,274 @@
   <widget class="QLabel" name="heightLabel">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>100</y>
+     <x>120</x>
+     <y>160</y>
      <width>66</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
     <string>Height</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>110</y>
+     <width>591</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Output image</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>230</y>
+     <width>591</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>250</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bee parameters</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="maxGenNumberLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>290</y>
+     <width>201</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>max number of generations</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="maxGenNumberSpinBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>310</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="beeNumberSpinBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>370</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="beeNumberLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>350</y>
+     <width>181</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>number of bees</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="selectBestedSidesNumberSpinBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>430</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="selectedBestSidesNumberLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>410</y>
+     <width>221</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>number of selected best sides</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="eliteSitesNumberSpinBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>500</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="eliteSitesNumberLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>480</y>
+     <width>181</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>number of elite sites</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="patchSizeSpinBox">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>310</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="eliteBeesNumberSpinbox">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>370</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="otherBeesNumberSpinBox">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>430</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="patchSizeLabel">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>290</y>
+     <width>181</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>patch size</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="eliteBessNumberLabel">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>350</y>
+     <width>181</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>number of elite bees </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="otherBeesNumberLabel">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>410</y>
+     <width>181</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>number of other bees</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="patchDecreaseFactorLabel">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>480</y>
+     <width>181</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>patch decrease factor</string>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="patchDecreaseFactorSpinBox">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>500</y>
+     <width>62</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="value">
+    <double>0.950000000000000</double>
    </property>
   </widget>
  </widget>

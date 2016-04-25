@@ -17,11 +17,6 @@ class StartGUI(QtGui.QMainWindow):
         self.ui.setupUi(self)
         self.dir_name = ""
 
-        self.ui.heightSpinBox.setMinimum(0)
-        self.ui.heightSpinBox.setMaximum(10000)
-
-        self.ui.widthSpinBox.setMinimum(0)
-        self.ui.widthSpinBox.setMaximum(10000)
         self.result_label = QLabel()
 
         QtCore.QObject.connect(self.ui.openButton, QtCore.SIGNAL("clicked()"), self.file_dialog)
@@ -36,7 +31,15 @@ class StartGUI(QtGui.QMainWindow):
         print "starting with arguments: \ndir={} \nwidth={} \nheight={}\n".format(self.dir_name, self.ui.widthSpinBox.value(), self.ui.heightSpinBox.value())
         width = self.ui.widthSpinBox.value()
         height = self.ui.heightSpinBox.value()
-        image = generate(self.dir_name, width, height)
+        max_gens = self.ui.maxGenNumberSpinBox.value()
+        num_bees = self.ui.beeNumberSpinBox.value()
+        num_sites = self.ui.selectBestedSidesNumberSpinBox.value()
+        patch_size = self.ui.patchSizeSpinBox.value()
+        elite_bees = self.ui.eliteBeesNumberSpinbox.value()
+        other_bees = self.ui.otherBeesNumberSpinBox.value()
+        patch_decrease_factor = self.ui.patchDecreaseFactorSpinBox.value()
+
+        image = generate(self.dir_name, width, height, max_gens, num_bees, num_sites, patch_size, elite_bees, other_bees, patch_decrease_factor)
         self.show_result(image, width, height)
 
     def show_result(self, image, width, height):
