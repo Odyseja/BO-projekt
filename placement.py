@@ -60,6 +60,8 @@ def placement1(width, height, image, **kw):
                 continue
 
         max_y = max(place[start:end], key=lambda x: x[2])[2]
+        if max_y + im_h > height:
+            continue
         del place[start:end]
         place.append( (start_item[0], start_item[0] + im_w, max_y + im_h + 1) )
         place.append( (start_item[0] + im_w + 1, end_item[1], end_item[2]   ) )

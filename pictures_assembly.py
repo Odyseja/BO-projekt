@@ -53,10 +53,10 @@ def mock_picture(size_x, size_y):
 def prepare_images_list(results_to_print, path_to_pictures_folder):
     images_to_put = []
     for result in results_to_print:
-        # left_top_corner_x, left_top_corner_y, size_x, size_y, picture_name = result
-        placement_data, image_data = result
-        left_top_corner_x, left_top_corner_y = placement_data
-        size_x, size_y, picture_name = image_data
+        left_top_corner_x, left_top_corner_y, size_x, size_y, picture_name = result
+        #placement_data, image_data = result
+        #left_top_corner_x, left_top_corner_y = placement_data
+        #size_x, size_y, picture_name = image_data
         if path_to_pictures_folder:
             image = read_picture_from_file(path_to_pictures_folder, picture_name)
             tup = (image, size_x, size_y, left_top_corner_x, left_top_corner_y)

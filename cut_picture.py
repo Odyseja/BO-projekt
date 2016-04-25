@@ -61,4 +61,4 @@ def cut_image(image, size_x, size_y, min_x, min_y, depth):
 im = Image.open('images/gora.jpg')
 num = 0
 
-cut_image(im, 750, 394, 10, 10, 1000)
+cut_image(im, 750, 394, 10, 10, 100)

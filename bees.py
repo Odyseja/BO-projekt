@@ -51,7 +51,7 @@ def search(max_gens, search_space, num_bees, num_sites, elite_sites, patch_size,
     iteration = 0
     fitness_history = []
     population = initialize_population(num_bees, search_space)
-    while iteration < max_gens: #TODO: stop condition
+    while iteration < max_gens and fitness_history[-1] > 0:
         bee_best = get_best_solution(population)
         fitness_history.append(fitness_function(bee_best))
 

@@ -21,3 +21,7 @@ def generate(dir_name, width, height, max_gens, num_bees, num_sites, patch_size,
     result = assembly.assemble_pictures(width, height, distributed, dir_name)
     assembly.write_board_to_file(result, "out" + os.path.sep + "output.png")
     return result
+
+
+if __name__ == "__main__":
+    generate("splitted", 750, 394, 1, 1, 1, 1, 1, 1, 1)
