@@ -1,7 +1,6 @@
 import random
 
-def fitness_function(solution_array):
-    return 0
+
 
 def create_random_bee(array):
     copy_array = array[:]       #array are passed by reference 
@@ -10,8 +9,10 @@ def create_random_bee(array):
 
 def create_neigh_bee(site, patch_size):
     copy_array = site[:]
-    for i in range(int(patch_size)):
-        i, j = random.randint(0, len(site)), random.randint(0, len(site))
+    for k in range(int(patch_size)):
+        i, j = random.randint(0, len(site)-1), random.randint(0, len(site)-1)
+        #print str(i)+" "+str(j)
+        #print(len(copy_array))
         copy_array[i], copy_array[j] = copy_array[j], copy_array[i] #change position of two elements
     return copy_array
 
@@ -31,7 +32,10 @@ def initialize_population(bees_num, search_space):
     return [create_random_bee(search_space) for i in xrange(bees_num)]
 
 
-def search(max_gens, search_space, num_bees, num_sites, elite_sites, patch_size, elite_bees, other_bees, patch_decrease_factor=0.95):
+def search(fitness, max_gens, search_space, num_bees, num_sites, elite_sites,
+           patch_size, elite_bees, other_bees, patch_decrease_factor=0.95):
+    global fitness_function
+    fitness_function = fitness
     """ Search for the best solution with the bees algorithm
     Args:
         max_gens: maximal number of generations
@@ -51,7 +55,10 @@ def search(max_gens, search_space, num_bees, num_sites, elite_sites, patch_size,
     iteration = 0
     fitness_history = []
     population = initialize_population(num_bees, search_space)
-    while iteration < max_gens and fitness_history[-1] > 0:
+    while iteration < max_gens:
+        if fitness_history and fitness_history[-1] == 0:
+            break
+        print "Iteration number "+str(iteration)
         bee_best = get_best_solution(population)
         fitness_history.append(fitness_function(bee_best))
 

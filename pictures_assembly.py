@@ -15,16 +15,24 @@ def assemble_pictures(max_x, max_y, results_to_print, path_to_pictures_folder=No
     im = Image.new("RGB", (max_x, max_y), "white")
     board = im.load()
     images_to_put = prepare_images_list(results_to_print, path_to_pictures_folder)
+    overlap = 0
     for data in images_to_put:
         picture, image_x_size, image_y_size, left_up_corner_x, left_up_corner_y = data
-        put_picture(board,  picture, image_x_size, image_y_size, left_up_corner_x, left_up_corner_y)
+        overlap += put_picture(board,  picture, image_x_size, image_y_size, left_up_corner_x, left_up_corner_y)
+
+    print "There are "+str(overlap)+" overlapping pictures"
     return im
 
 
 def put_picture(board, image, image_x_size, image_y_size, left_up_corner_x, left_up_corner_y):
+    overlap = 0
     for i in range(image_x_size):
         for j in range(image_y_size):
+            if overlap == 0 and board[left_up_corner_x+i, left_up_corner_y+j] != (255, 255, 255):
+                overlap += 1
             board[left_up_corner_x+i, left_up_corner_y+j] = image[i, j]
+
+    return overlap
 
 
 def read_picture_from_file(path, filename):
@@ -54,9 +62,6 @@ def prepare_images_list(results_to_print, path_to_pictures_folder):
     images_to_put = []
     for result in results_to_print:
         left_top_corner_x, left_top_corner_y, size_x, size_y, picture_name = result
-        #placement_data, image_data = result
-        #left_top_corner_x, left_top_corner_y = placement_data
-        #size_x, size_y, picture_name = image_data
         if path_to_pictures_folder:
             image = read_picture_from_file(path_to_pictures_folder, picture_name)
             tup = (image, size_x, size_y, left_top_corner_x, left_top_corner_y)
