@@ -41,6 +41,7 @@ def cut_image_horizontally(image, size_x, size_y, where_split):
 def cut_image(image, size_x, size_y, min_x, min_y, depth):
     global num
     if depth > 0 and size_x > 2*min_x and size_y > 2*min_y:
+        depth -= random.randrange(0, depth)
         if random.random() < 0.5:
             where_split = random.randrange(min_x, size_x)
             one, two = cut_image_vertically(image, size_x, size_y, where_split)
@@ -60,4 +61,4 @@ def cut_image(image, size_x, size_y, min_x, min_y, depth):
 im = Image.open('images/gora.jpg')
 num = 0
 
-cut_image(im, 750, 394, 10, 10, 107)
+cut_image(im, 750, 394, 10, 10, 1000)
