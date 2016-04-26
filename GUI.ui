@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>596</width>
-    <height>626</height>
+    <width>813</width>
+    <height>556</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QPushButton" name="startButton">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>580</y>
+     <x>690</x>
+     <y>510</y>
      <width>98</width>
      <height>27</height>
     </rect>
@@ -84,7 +84,7 @@
   <widget class="QSpinBox" name="heightSpinBox">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>160</x>
      <y>180</y>
      <width>60</width>
      <height>27</height>
@@ -110,7 +110,7 @@
   <widget class="QLabel" name="heightLabel">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>160</x>
      <y>160</y>
      <width>66</width>
      <height>17</height>
@@ -125,7 +125,7 @@
     <rect>
      <x>0</x>
      <y>110</y>
-     <width>591</width>
+     <width>811</width>
      <height>21</height>
     </rect>
    </property>
@@ -151,7 +151,7 @@
     <rect>
      <x>0</x>
      <y>230</y>
-     <width>591</width>
+     <width>811</width>
      <height>21</height>
     </rect>
    </property>
@@ -201,8 +201,8 @@
   <widget class="QSpinBox" name="beeNumberSpinBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>370</y>
+     <x>320</x>
+     <y>310</y>
      <width>60</width>
      <height>27</height>
     </rect>
@@ -214,8 +214,8 @@
   <widget class="QLabel" name="beeNumberLabel">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>350</y>
+     <x>320</x>
+     <y>290</y>
      <width>181</width>
      <height>17</height>
     </rect>
@@ -228,7 +228,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>430</y>
+     <y>370</y>
      <width>60</width>
      <height>27</height>
     </rect>
@@ -241,20 +241,20 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>410</y>
+     <y>350</y>
      <width>221</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>number of selected best sides</string>
+    <string>number of selected best sites</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="eliteSitesNumberSpinBox">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>500</y>
+     <y>430</y>
      <width>60</width>
      <height>27</height>
     </rect>
@@ -267,7 +267,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>480</y>
+     <y>410</y>
      <width>181</width>
      <height>17</height>
     </rect>
@@ -279,8 +279,8 @@
   <widget class="QSpinBox" name="patchSizeSpinBox">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>310</y>
+     <x>580</x>
+     <y>300</y>
      <width>60</width>
      <height>27</height>
     </rect>
@@ -318,8 +318,8 @@
   <widget class="QLabel" name="patchSizeLabel">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>290</y>
+     <x>580</x>
+     <y>280</y>
      <width>181</width>
      <height>17</height>
     </rect>
@@ -357,8 +357,8 @@
   <widget class="QLabel" name="patchDecreaseFactorLabel">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>480</y>
+     <x>580</x>
+     <y>350</y>
      <width>181</width>
      <height>17</height>
     </rect>
@@ -370,14 +370,40 @@
   <widget class="QDoubleSpinBox" name="patchDecreaseFactorSpinBox">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>500</y>
+     <x>580</x>
+     <y>370</y>
      <width>62</width>
      <height>27</height>
     </rect>
    </property>
    <property name="value">
     <double>0.950000000000000</double>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="overlaPenaltySpinBox">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>430</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>10000</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="overlapPenaltyLabel">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>410</y>
+     <width>181</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>overlap penalty</string>
    </property>
   </widget>
  </widget>

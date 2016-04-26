@@ -17,6 +17,8 @@ def generate(dir_name, width, height, max_gens, num_bees, num_sites, elite_sites
     print "patch_size: " + str(patch_size)
     print "elite_bees: " + str(elite_bees)
     print "other_bees: " + str(other_bees)
+    print "overlap_penalty: " + str(overlap_penalty)
+    print "elite_sites: " + str(elite_sites)
     print "patch_decrease_factor: " + str(patch_decrease_factor)
 
     # fitness = fitness_counter.fitness_pixels
