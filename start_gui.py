@@ -39,7 +39,7 @@ class StartGUI(QtGui.QMainWindow):
         other_bees = self.ui.otherBeesNumberSpinBox.value()
         patch_decrease_factor = self.ui.patchDecreaseFactorSpinBox.value()
         elite_sites = self.ui.eliteSitesNumberSpinBox.value()
-        overlap_penalty = self.ui.overlaPenaltySpinBox.value()
+        overlap_penalty = self.ui.overlapPenaltySpinBox.value()
 
         image = generate(self.dir_name, width, height, max_gens, num_bees, num_sites, elite_sites, patch_size, elite_bees, other_bees, overlap_penalty, patch_decrease_factor)
         self.show_result(image, width, height)

@@ -80,6 +80,9 @@
    <property name="maximum">
     <number>10000</number>
    </property>
+   <property name="value">
+    <number>750</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="heightSpinBox">
    <property name="geometry">
@@ -92,6 +95,9 @@
    </property>
    <property name="maximum">
     <number>10000</number>
+   </property>
+   <property name="value">
+    <number>394</number>
    </property>
   </widget>
   <widget class="QLabel" name="widthLabel">
@@ -197,6 +203,9 @@
    <property name="maximum">
     <number>10000</number>
    </property>
+   <property name="value">
+    <number>1000</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="beeNumberSpinBox">
    <property name="geometry">
@@ -209,6 +218,9 @@
    </property>
    <property name="maximum">
     <number>10000</number>
+   </property>
+   <property name="value">
+    <number>20</number>
    </property>
   </widget>
   <widget class="QLabel" name="beeNumberLabel">
@@ -236,6 +248,9 @@
    <property name="maximum">
     <number>10000</number>
    </property>
+   <property name="value">
+    <number>20</number>
+   </property>
   </widget>
   <widget class="QLabel" name="selectedBestSidesNumberLabel">
    <property name="geometry">
@@ -262,6 +277,9 @@
    <property name="maximum">
     <number>10000</number>
    </property>
+   <property name="value">
+    <number>3</number>
+   </property>
   </widget>
   <widget class="QLabel" name="eliteSitesNumberLabel">
    <property name="geometry">
@@ -280,13 +298,16 @@
    <property name="geometry">
     <rect>
      <x>580</x>
-     <y>300</y>
+     <y>310</y>
      <width>60</width>
      <height>27</height>
     </rect>
    </property>
    <property name="maximum">
     <number>10000</number>
+   </property>
+   <property name="value">
+    <number>3</number>
    </property>
   </widget>
   <widget class="QSpinBox" name="eliteBeesNumberSpinbox">
@@ -301,6 +322,9 @@
    <property name="maximum">
     <number>10000</number>
    </property>
+   <property name="value">
+    <number>2</number>
+   </property>
   </widget>
   <widget class="QSpinBox" name="otherBeesNumberSpinBox">
    <property name="geometry">
@@ -314,12 +338,15 @@
    <property name="maximum">
     <number>10000</number>
    </property>
+   <property name="value">
+    <number>3</number>
+   </property>
   </widget>
   <widget class="QLabel" name="patchSizeLabel">
    <property name="geometry">
     <rect>
      <x>580</x>
-     <y>280</y>
+     <y>290</y>
      <width>181</width>
      <height>17</height>
     </rect>
@@ -380,19 +407,6 @@
     <double>0.950000000000000</double>
    </property>
   </widget>
-  <widget class="QSpinBox" name="overlaPenaltySpinBox">
-   <property name="geometry">
-    <rect>
-     <x>580</x>
-     <y>430</y>
-     <width>60</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>10000</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="overlapPenaltyLabel">
    <property name="geometry">
     <rect>
@@ -404,6 +418,19 @@
    </property>
    <property name="text">
     <string>overlap penalty</string>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="overlapPenaltySpinBox">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>430</y>
+     <width>62</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="value">
+    <double>0.100000000000000</double>
    </property>
   </widget>
  </widget>
