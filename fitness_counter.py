@@ -28,6 +28,22 @@ def fitness_amount_of_images(solution_array):
     #print "Fitness: "+str(fitness)
     return fitness
 
+def fitness_images_fit(solution_array):
+    distributed = placement1(im_w, im_h, solution_array)
+    fitness = im_w * im_h
+    fit = []
+    for pic in distributed:
+        left_top_corner_x, left_top_corner_y, size_x, size_y, picture_name = pic
+        fitness -= size_x*size_y
+        fit.append(picture_name)
+    for pic in solution_array:
+        w, h, n = pic
+        if not n in fit:
+            fitness += overlap_penalty*w*h
+
+    #print "Fitness: "+str(fitness)
+    return fitness
+
 
 def check_boundaries(left_top_corner_x, left_top_corner_y, size_x, size_y,
                      left_top_corner_x1, left_top_corner_y1):

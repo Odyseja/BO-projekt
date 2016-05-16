@@ -42,17 +42,19 @@ def placement1(width, height, image, **kw):
         start_item, end_item = place[0], place[-1]
         min_val = float("inf")
         for i in range(len(place)):
-            if width - place[i][0] > im_w and place[i][2] < min_val:
-                max_val = place[i][2]
-                for j in range(i, len(place)):
+            if width - rank[i][0] > im_w and rank[i][2] < min_val:
+                max_val = rank[i][2]
+                l = place.index(rank[i])
+                for j in range(l, len(place)):
                     if not place[j][2] < min_val:
                         break
                     max_val = max(max_val, place[j][2])
-                    if place[j][1] >= place[i][0] + im_w:
-                        start, end = i, j + 1
-                        start_item = place[i]
-                        end_item = place[j]
-                        min_val = max_val
+                    if place[j][1] >= rank[i][0] + im_w:
+                        if max_val < min_val:
+                            start, end = l, j + 1
+                            start_item = rank[i]
+                            end_item = place[j]
+                            min_val = max_val
                         break
         else:
             if end == -1:
@@ -63,8 +65,9 @@ def placement1(width, height, image, **kw):
         if max_y + im_h > height:
             continue
         del place[start:end]
-        place.append( (start_item[0], start_item[0] + im_w, max_y + im_h + 1) )
-        place.append( (start_item[0] + im_w + 1, end_item[1], end_item[2]   ) )
+        place.append( (start_item[0], start_item[0] + im_w, max_y + im_h) )
+        if start_item[0] + im_w < end_item[1]:
+            place.append( (start_item[0] + im_w, end_item[1], end_item[2]   ) )
         
         x, y = start_item[0], max_y
         result.append( (x, y, im_w, im_h, im[2] ) )
