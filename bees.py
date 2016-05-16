@@ -1,5 +1,5 @@
 import random
-
+import time
 
 
 def create_random_bee(array):
@@ -55,19 +55,21 @@ def search(fitness, max_gens, search_space, num_bees, num_sites, elite_sites,
     iteration = 0
     fitness_history = []
     population = initialize_population(num_bees, search_space)
+    t = time.time()
     while iteration < max_gens:
+
         if fitness_history and fitness_history[-1] == 0:
             break
-        print "Iteration number "+str(iteration)
         bee_best = get_best_solution(population)
         fitness_history.append(fitness_function(bee_best))
 
         next_generation = []
-        patch = patch_size * patch_decrease_factor
+        patch = patch * patch_decrease_factor
+        if not int(patch):
+            break
         sites_best = select_best_sites(population, num_sites)
         site_num = 0
         for site in sites_best:
-            recruited_bees = []
             if site_num < elite_sites:
                 recruited_bees = elite_bees
             else:
@@ -82,6 +84,9 @@ def search(fitness, max_gens, search_space, num_bees, num_sites, elite_sites,
             next_generation.append(create_random_bee(search_space))
         population = next_generation
         iteration += 1
+        if iteration%50 == 49:
+            print "Iteration:", iteration +1, "Time:", time.time()-t, "Fitness:", fitness_history[-1]
+            t = time.time()
 
     return bee_best, fitness_history
 

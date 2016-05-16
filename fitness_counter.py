@@ -10,7 +10,7 @@ def fitness_pixels(solution_array):
         for j in range(im_h):
             if current_board[i, j] == (0, 0, 0):
                 fitness += 1
-    print "Counted fitness "+str(fitness)
+    #print "Counted fitness "+str(fitness)
     return fitness
 
 
@@ -25,7 +25,7 @@ def fitness_amount_of_images(solution_array):
                 if check_boundaries(left_top_corner_x, left_top_corner_y, size_x, size_y,
                                     left_top_corner_x1, left_top_corner_y1):
                     fitness += overlap_penalty
-    print "Fitness: "+str(fitness)
+    #print "Fitness: "+str(fitness)
     return fitness
 
 
